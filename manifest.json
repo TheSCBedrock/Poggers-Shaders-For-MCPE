@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "By TSCB",
+    "name": "Poggers Shaders",
+    "uuid": "7f596efa-b706-439f-b8b2-008331bac9f5",
+    "version": [
+      1,
+      8,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      8,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "By TSCB",
+      "type": "resources",
+      "uuid": "2216e1c2-15fc-4075-ac04-7adc4fb5af7b",
+      "version": [
+        1,
+        8,
+        0
+      ]
+    }
+  ]
+}
