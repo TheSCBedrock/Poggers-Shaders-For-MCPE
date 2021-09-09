@@ -1,13 +1,28 @@
 // __multiversion__
 // This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+#if __VERSION__ >=300
 
-#include "fragmentVersionSimple.h"
+#define varying in
+#define texture2D texture
+out vec4 FragColor;
+#define gl_FragColor FragColor
 
-#include "uniformShaderConstants.h"
+#else
+
+#endif
 
 varying vec4 color;
 
+uniform vec4 CURRENT_COLOR;
+uniform highp float TIME;
+
 void main()
 {
-	gl_FragColor = vec4(color.rgb * CURRENT_COLOR.rgb * color.a, color.a);
+	
+	vec4 stars = color;
+stars.r = max(stars.r,6.0);
+stars.g = max(stars.g,6.0);
+stars.b = max(stars.b,6.0);
+
+	gl_FragColor = vec4(color.rgb * vec3(CURRENT_COLOR.r,CURRENT_COLOR.g*2.3,CURRENT_COLOR.b*2.7), color.a) * stars;
 }
