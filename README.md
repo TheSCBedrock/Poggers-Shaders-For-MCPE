@@ -7,5 +7,8 @@ Just Normal MCPE Shader
 -Realistic Sun And Moon
 -Block Shadow
 -Side Block Shadow
+# Added Features On V1.9.0 Beta 2
+-The Night Sky Is More Beautiful
+-Shining star
 # Note
 if you want to showcase my shader please credit me.
