@@ -8,5 +8,4 @@ Just Normal MCPE Shader
 -Block Shadow
 -Side Block Shadow
 # Note
-if you want to showcase my shader please credit me
-
+if you want to showcase my shader please credit me.
