@@ -16,6 +16,8 @@
 
 #ifndef BYPASS_PIXEL_SHADER
 	varying vec4 color;
+	varying vec3 position;
+	varying vec3 wpos;
 #endif
 
 #ifdef FOG
@@ -54,6 +56,8 @@ void main()
     pos = PROJ * pos;
 #endif
     gl_Position = pos;
+position = POSITION.xyz;
+wpos = worldPos.xyz;
 
 #ifndef BYPASS_PIXEL_SHADER
     uv0 = TEXCOORD_0;
