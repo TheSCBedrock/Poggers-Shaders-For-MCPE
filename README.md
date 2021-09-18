@@ -9,7 +9,5 @@ Just Normal MCPE Shader
 -Side Block Shadow
 -The Night Sky Is More Beautiful
 -Shining star
-# Added Features On V2.0.0 Beta 3
--Fog Color Is Blue
 # Note
 if you want to showcase my shader please credit me.
