@@ -70,7 +70,7 @@ vec4 inColor = color;
 #endif
 
 vec4 diff2 = texture2D( TEXTURE_1, uv1 );
-vec3 night = vec3(0.05,0.1,1.0);
+vec3 night = vec3(0.03,0.1,1.1);
 
 diff2.rgb *= pow(diff2.rgb , 1.0 - night);
 
@@ -91,19 +91,19 @@ diff2.rgb *= pow(diff2.rgb , 1.0 - night);
 	diffuse.a = 1.0;
 #endif
 
-diffuse.rgb *= vec3(1.9,1.8,1.7);
+diffuse.rgb *= vec3(2.4,2.5,2.6);
 
-if(uv1.y<0.875){diffuse.rgb *= vec3(0.76,0.76,0.81)+uv1.x*vec3(0.24,0.24,0.19);}
-if(uv1.y<0.873){diffuse.rgb *= vec3(0.72,0.72,0.77)+uv1.x*vec3(0.28,0.28,0.23);}
-if(uv1.y<0.871){diffuse.rgb *= vec3(0.68,0.68,0.73)+uv1.x*vec3(0.32,0.32,0.27);}
-if(uv1.y<0.869){diffuse.rgb *= vec3(0.6,0.6,0.65)+uv1.x*vec3(0.4,0.4,0.35);}
+if(color.g<0.64 || uv1.y<0.874){diffuse.rgb *= vec3(0.98)+uv1.x*vec3(0.02);}
+if(color.g<0.63 || uv1.y<0.873){diffuse.rgb *= vec3(0.94)+uv1.x*vec3(0.06);}
+if(color.g<0.62 || uv1.y<0.872){diffuse.rgb *= vec3(0.88)+uv1.x*vec3(0.12);}
+if(color.g<0.61 || uv1.y<0.871){diffuse.rgb *= vec3(0.8)+uv1.x*vec3(0.2);}
 
 
 if(color.a != 0.0){
-if(color.g<0.64){diffuse.rgb *= vec3(0.76,0.76,0.81)+uv1.x*vec3(0.24,0.24,0.19);}
-if(color.g<0.63){diffuse.rgb *= vec3(0.72,0.72,0.77)+uv1.x*vec3(0.28,0.28,0.23);}
-if(color.g<0.62){diffuse.rgb *= vec3(0.68,0.68,0.73)+uv1.x*vec3(0.32,0.32,0.27);}
-if(color.g<0.61){diffuse.rgb *= vec3(0.6,0.6,0.65)+uv1.x*vec3(0.4,0.4,0.35);}
+if(color.g<0.64 || uv1.y<0.874){diffuse.rgb *= vec3(0.98)+uv1.x*vec3(0.02);}
+if(color.g<0.63 || uv1.y<0.873){diffuse.rgb *= vec3(0.94)+uv1.x*vec3(0.06);}
+if(color.g<0.62 || uv1.y<0.872){diffuse.rgb *= vec3(0.88)+uv1.x*vec3(0.12);}
+if(color.g<0.61 || uv1.y<0.871){diffuse.rgb *= vec3(0.8)+uv1.x*vec3(0.2);}
 }
 
 if(color.a==0.0){

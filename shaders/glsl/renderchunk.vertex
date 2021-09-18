@@ -66,8 +66,19 @@ wpos = worldPos.xyz;
 #endif
 
 #ifdef ALPHA_TEST
-if(color.g>color.r){
-gl_Position.xyz += sin(TIME*4.0+worldPos.x+worldPos.z+worldPos.x+worldPos.z+worldPos.y)*sin(worldPos.z)*0.03;}
+
+highp float wave = sin(TIME*2.7+POSITION.x*2.4+POSITION.z*1.4+POSITION.x*1.0+POSITION.z*3.4+POSITION.y*1.1+POSITION.y*1.5)*sin(TIME*0.9+POSITION.x*3.0);
+
+if(color.g>color.r&&color.a>0.0){
+gl_Position.x += wave*0.025*uv1.y;
+gl_Position.y += wave*0.025*uv1.y;
+}
+
+if(color.a==0.0){
+gl_Position.x += wave*0.06*uv1.y;
+gl_Position.y += wave*0.06*uv1.y;
+}
+
 #endif
 
 #ifdef BLEND
