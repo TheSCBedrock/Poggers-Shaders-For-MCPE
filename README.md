@@ -9,5 +9,7 @@ Just Normal MCPE Shader
 -Side Block Shadow
 -The Night Sky Is More Beautiful
 -Shining star
+-Underwater and nether update
+-Wet rain effect
 # Note
 if you want to showcase my shader please credit me.
