@@ -65,28 +65,51 @@ wpos = worldPos.xyz;
 	color = COLOR;
 #endif
 
+
+bool nether = (FOG_COLOR.r>FOG_COLOR.b && FOG_COLOR.r<0.5 && FOG_COLOR.b<0.2);
+
+
 #ifdef ALPHA_TEST
 
 highp float wave = sin(TIME*2.7+POSITION.x*2.4+POSITION.z*1.4+POSITION.x*1.0+POSITION.z*3.4+POSITION.y*1.1+POSITION.y*1.5)*sin(TIME*0.9+POSITION.x*3.0);
 
 if(color.g>color.r&&color.a>0.0){
-gl_Position.x += wave*0.025*uv1.y;
-gl_Position.y += wave*0.025*uv1.y;
+gl_Position.x += wave*0.040*uv1.y;
+gl_Position.y += wave*0.040*uv1.y;
 }
 
 if(color.a==0.0){
-gl_Position.x += wave*0.06*uv1.y;
-gl_Position.y += wave*0.06*uv1.y;
+gl_Position.x += wave*0.10*uv1.y;
+gl_Position.y += wave*0.10*uv1.y;
 }
 
 #endif
 
 #ifdef BLEND
-if(color.b>color.r){
-gl_Position.y += sin(TIME*4.0+worldPos.x+worldPos.z+worldPos.x+worldPos.z+worldPos.y)*sin(worldPos.z)*0.1;
-}
+if(color.b>color.r){
+	
+highp float water = sin(TIME*4.0+worldPos.x+worldPos.z+worldPos.x+worldPos.z+worldPos.y)*sin(worldPos.z);
+
+highp float water2 = sin(TIME*3.0+worldPos.x+worldPos.z+worldPos.x+worldPos.z+worldPos.y)*sin(worldPos.z);
+
+highp float water3 = sin(TIME*1.7);
+	
+gl_Position.y += water*0.15*uv1.y;
+gl_Position.y += water2*0.035*uv1.y;
+gl_Position.y += water3*0.0*uv1.y;
+}
+
 #endif
 
+
+if(nether==false){
+if(FOG_CONTROL.x==0.0){
+
+gl_Position.x += sin(TIME*7.0+worldPos.x*2.2+worldPos.z*1.2+worldPos.x*1.1+worldPos.z*3.2+worldPos.y*1.3+worldPos.y*1.3)*sin(TIME*1.5+worldPos.x*3.3)*0.035;
+
+}}
+
+
 
 ///// find distance from the camera
 
